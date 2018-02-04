@@ -1,0 +1,18 @@
+zuul:
+  routes:
+    catalogo:
+      path: /catalogo/**
+      serviceId: servicio.catalogo
+    compra:
+      path: /compra/**
+      serviceId: servicio.cesta
+
+
+eureka:
+  client:
+    registerWithEureka: false
+    serviceUrl:
+      defaultZone: http://localhost:2222/eureka/
+ 
+server:
+  port: 6666   
