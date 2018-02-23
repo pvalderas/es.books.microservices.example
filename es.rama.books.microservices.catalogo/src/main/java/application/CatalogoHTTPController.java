@@ -11,7 +11,7 @@ import application.dao.DAO;
 import application.domain.Producto;
  
 @RestController
-public class HTTPController {
+public class CatalogoHTTPController {
 	 
 	@RequestMapping(
 			  value = "/productos", 

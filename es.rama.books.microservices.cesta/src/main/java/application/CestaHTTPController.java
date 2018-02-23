@@ -20,7 +20,7 @@ import application.domain.Producto;
 import application.eureka.EurekaClient;
  
 @RestController 
-public class HTTPController {
+public class CestaHTTPController {
 	
 	@Autowired
 	private EurekaClient eureka;
