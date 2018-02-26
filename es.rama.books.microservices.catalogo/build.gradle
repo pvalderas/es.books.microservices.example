@@ -27,6 +27,17 @@ dependencyManagement {
 dependencies {
 	compile 'org.springframework.cloud:spring-cloud-starter-config'
     compile 'org.springframework.cloud:spring-cloud-starter-eureka'
+
+	testCompile 'org.springframework.boot:spring-boot-starter-test'
+	testCompile 'org.mockito:mockito-core:2.15.0'
+//	testCompile 'au.com.dius:pact-jvm-consumer-junit_2.11:3.5.5'
+	//Pruebas E2E con Selenium
+	testCompile 'org.seleniumhq.selenium:selenium-firefox-driver:3.9.1'
+	testCompile 'org.seleniumhq.selenium:selenium-api:3.9.1'
+	testCompile 'org.seleniumhq.selenium:selenium-remote-driver:3.9.1'
+	//Pruebas con Gerkhin y Cucumber
+    testCompile('io.cucumber:cucumber-java:2.0.1')
+    testCompile('io.cucumber:cucumber-junit:2.0.1')
 }
 
 jar{

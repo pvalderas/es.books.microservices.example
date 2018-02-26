@@ -12,6 +12,10 @@ import application.domain.Producto;
  
 @RestController
 public class CatalogoHTTPController {
+	
+	public CatalogoHTTPController(){
+		super();
+	}
 	 
 	@RequestMapping(
 			  value = "/productos", 
