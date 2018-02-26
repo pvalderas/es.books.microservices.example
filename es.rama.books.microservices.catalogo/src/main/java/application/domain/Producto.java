@@ -3,7 +3,7 @@ package application.domain;
 public class Producto {
 	private Integer id;
 	private String nombre;
-	private String Descripcion;
+	private String descripcion;
 	private Double precio;
 	
 	public Producto(){
@@ -14,7 +14,7 @@ public class Producto {
 	public Producto(Integer id, String nombre, String descripcion, Double precio) {
 		this.id = id;
 		this.nombre = nombre;
-		Descripcion = descripcion;
+		this.descripcion = descripcion;
 		this.precio = precio;
 	}
 	
@@ -32,10 +32,10 @@ public class Producto {
 		this.nombre = nombre;
 	}
 	public String getDescripcion() {
-		return Descripcion;
+		return descripcion;
 	}
 	public void setDescripcion(String descripcion) {
-		Descripcion = descripcion;
+		this.descripcion = descripcion;
 	}
 	public Double getPrecio() {
 		return precio;
