@@ -1,8 +1,0 @@
-spring:  
-  application:
-    name: eureka-server
-  cloud:
-    config:
-      uri: http://localhost:4444
-      username: admin
-      password: '{cipher}baa9a591edb3925706ccc5b2144758cc8ed7e7bc05bfc2fa6fa57210f9688c44'

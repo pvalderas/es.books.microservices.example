@@ -1,8 +1,0 @@
-spring:
-  application:
-     name: servicio.cesta
-  cloud:
-    config:
-      uri: http://localhost:4444
-      username: admin
-      password: mipassword
