@@ -1,17 +1,21 @@
 package application;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import application.dao.DAO;
 import application.domain.Producto;
+import application.service.ProductoService;
  
 @RestController
 public class CatalogoHTTPController {
+	
+	@Autowired
+	ProductoService productoService;
 	
 	public CatalogoHTTPController(){
 		super();
@@ -22,7 +26,7 @@ public class CatalogoHTTPController {
 			  method = RequestMethod.GET, 
 			  produces = "application/json")
 	 public List<Producto> listaProductosJSON() {
-		 return DAO.getProductoDAO().getProductos();
+		 return productoService.getProductos();
 	 }
 	
 	@RequestMapping(
@@ -37,7 +41,7 @@ public class CatalogoHTTPController {
 			System.out.println(i);
 			i++;
 		 }*/
-		 return DAO.getProductoDAO().getProductoById(id);
+		 return productoService.getProductoById(id);
 	 }
 	
 	@RequestMapping(
@@ -45,7 +49,7 @@ public class CatalogoHTTPController {
 			  method = RequestMethod.DELETE
 			  )
 	 public void delProducto(@PathVariable(value="id") Integer id) {
-		 DAO.getProductoDAO().delProductoById(id);
+		productoService.delProductoById(id);
 	 }
 	
 	
@@ -55,7 +59,7 @@ public class CatalogoHTTPController {
 			  consumes = "application/json"
 			  )
 	 public void addProducto(@RequestBody Producto p) {
-		 DAO.getProductoDAO().addProducto(p);
+		productoService.addProducto(p);
 	 }
 	
 }

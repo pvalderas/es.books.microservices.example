@@ -1,12 +1,10 @@
 package application.dao;
 
-import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import application.domain.Producto;
 
-public interface ProductoDAO {
-	public List<Producto> getProductos();
-	public Producto getProductoById(Integer id);
-	public void addProducto(Producto p);
-	public void delProductoById(Integer id);
+@Repository
+public interface ProductoDAO extends JpaRepository<Producto, Integer>{
 }

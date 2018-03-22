@@ -12,15 +12,15 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import application.CatalogoHTTPController;
-import application.dao.DAO;
 import application.domain.Producto;
+import application.service.ProductoService;
 
 
 @RunWith(MockitoJUnitRunner.class)
 public class CatalogoHTTPControllerUnitTest {
 	private CatalogoHTTPController catalogoController;
 	@Mock
-	private DAO repository;
+	private ProductoService productoService;	
 	
 	@Before
 	public void setUp() throws Exception {
@@ -30,14 +30,14 @@ public class CatalogoHTTPControllerUnitTest {
 	@Test
 	public void test_getProductoPorId(){
 		//Recuperamos el producto #1 del objeto mock
-		Producto pMock = repository.getProductoDAO().getProductoById(1);
+		Producto pMock = productoService.getProductoById(1);
 		//Recuperamos el producto #1 del servicio
 		Producto pService = catalogoController.getProductosJSON(1);
 		assertEquals(pMock, pService);
 	}
 	@Test
 	public void test_getProductos(){
-		List<Producto> listaMock = repository.getProductoDAO().getProductos();
+		List<Producto> listaMock = productoService.getProductos();
 		List<Producto> listaService = catalogoController.listaProductosJSON();
 		assertEquals(listaMock, listaService);
 	}

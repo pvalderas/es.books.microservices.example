@@ -13,7 +13,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import application.CatalogoHTTPController;
-import application.dao.DAO;
+import application.service.ProductoService;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(controllers=CatalogoHTTPController.class)
@@ -21,7 +21,7 @@ public class CatalogoHTTPControllerIntegrationTest {
 	@Autowired
 	private MockMvc mockMvc;
 	@MockBean
-	private DAO repository;	
+	private ProductoService productoService;	
 	
 	private static final String PRODUCTO_TO_JSON =
 		      "{"
